@@ -2,10 +2,11 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import useFetch from '../../hooks/useFetch';
+import "./featured.css";
 
 export default function Featured() {
 
-const {data,loading,err} = useFetch()
+const {data,loading,err} = useFetch("http://localhost:8800/api/hotels/countByCity?cities=berlin,madrid,london")
 
   return (
     <div className="featured">

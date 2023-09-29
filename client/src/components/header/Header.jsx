@@ -1,23 +1,21 @@
-import React from 'react'
 import {
-    faBed,
-    faCalendarDays,
-    faCar,
-    faPerson,
-    faPlane,
-    faTaxi,
-  } from "@fortawesome/free-solid-svg-icons";
-
-
+  faBed,
+  faCalendarDays,
+  faCar,
+  faPerson,
+  faPlane,
+  faTaxi,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./header.css";
 import { DateRange } from "react-date-range";
+import { useContext, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./header.css";
-
+import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Header({type}) {
   const [destination, setDestination] = useState("");
@@ -29,14 +27,15 @@ export default function Header({type}) {
       key: "selection",
     },
   ]);
-  const user ='mk'
+
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
     room: 1,
   });
-  //here context 
+
+  const { user } = useContext(AuthContext);
 
   const handleOption = (name, operation) => {
     setOptions((prev) => {
@@ -47,7 +46,7 @@ export default function Header({type}) {
     });
   };
 
-  //here context
+  const { dispatch } = useContext(SearchContext);
 
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });

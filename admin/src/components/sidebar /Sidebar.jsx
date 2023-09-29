@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
  <div className="sidebar">
     <div className="top">
       <Link to="/" style={{ textDecoration: "none" }}>
-        <span className="logo">lamadmin</span>
+        <span className="logo">admin</span>
       </Link>
     </div>
     <hr />
@@ -37,13 +37,13 @@ import { Link } from "react-router-dom";
             <span>Users</span>
           </li>
         </Link>
-        <Link /*to="/hotels" */style={{ textDecoration: "none" }}>
+        <Link to="/hotels" style={{ textDecoration: "none" }}>
           <li>
             <StoreIcon className="icon" />
             <span>Hotels</span>
           </li>
         </Link>
-        <Link /* to="/rooms" */style={{ textDecoration: "none" }}>
+        <Link to="/rooms" style={{ textDecoration: "none" }}>
           <li>
             <CreditCardIcon className="icon" />
             <span>Rooms</span>

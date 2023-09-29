@@ -1,7 +1,18 @@
-import React from 'react'
+import "./list.scss"
+import Sidebar from "../../components/sidebar /Sidebar"
+import Navbar from "../../components/navbar/Navbar"
+import Datatable from "../../components/datatable/Datatable"
 
-export default function List() {
+const List = ({columns}) => {
   return (
-    <div>List</div>
+    <div className="list">
+      <Sidebar/>
+      <div className="listContainer">
+        <Navbar/>
+        <Datatable columns={columns}/>
+      </div>
+    </div>
   )
 }
+
+export default List

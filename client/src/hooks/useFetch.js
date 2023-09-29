@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import React from 'react'
 
-export default function useFetch() {
+export default function useFetch(url) {
     
 const [data, setData] = useState([]);
 const [loading, setLoading] = useState(false);
