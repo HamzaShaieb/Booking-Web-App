@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import useFetch from '../../hooks/useFetch';
 import "./featured.css";
-
+import { apiUrl } from '../../ApiUrl';
 export default function Featured() {
 
-const {data,loading,err} = useFetch("http://localhost:8800/api/hotels/countByCity?cities=berlin,madrid,london")
+const {data,loading,err} = useFetch(`${apiUrl}/hotels/countByCity?cities=berlin,madrid,london`)
 
   return (
     <div className="featured">
@@ -34,7 +34,7 @@ const {data,loading,err} = useFetch("http://localhost:8800/api/hotels/countByCit
           />
           <div className="featuredTitles">
             <h1>Madrid</h1>
-            <h2>{data[1]} properties</h2>
+            <h2 onClick={()=>alert(apiUrl)}>{data[1]} properties</h2>
           </div>
         </div>
         <div className="featuredItem">

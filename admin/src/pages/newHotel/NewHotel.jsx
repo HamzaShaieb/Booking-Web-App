@@ -59,7 +59,7 @@ const NewHotel = () => {
     } catch (err) {console.log(err)}
   };
   return (
-    <div className="new">
+    <div className="new">z
       <Sidebar />
       <div className="newContainer">
         <Navbar />

@@ -5,11 +5,14 @@ import './index.css';
 import { AuthContextProvider } from './context/AuthContext';
 import { SearchContextProvider } from './context/SearchContext';
 
-const root = createRoot(document.getElementById('root')); // Replace 'root' with your actual root element ID
+const root = ReactDOM.createRoot(document.getElementById('root')); // Replace 'root' with your actual root element ID
 root.render(
-
-  <App/>
-
+  <AuthContextProvider>
+    <SearchContextProvider>
+    <App/>
+    </SearchContextProvider>
+  </AuthContextProvider>
+ 
  );
 
 
