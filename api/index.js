@@ -6,7 +6,6 @@ import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
-import ServerlessHttp from "serverless-http";
 import cors from "cors";
 
 const app = express();
@@ -46,8 +45,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen('/.netlify/functions/index', () => {
+app.listen(8800, () => {
   connect();
   console.log("Connected to backend.");
 });
- ServerlessHttp(app)
+
